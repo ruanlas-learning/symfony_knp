@@ -1,1 +1,11 @@
 <h1>The Genus {{ name }}</h1>
+
+{#&#123;&#35;{{ dump(name) }}&#35;&#125;#}
+{#&#123;&#35;{{ dump(notes) }}&#35;&#125;#}
+{#{{ dump() }}#}
+<ul>
+    {% for note in notes %}
+        <li>{{ note }}</li>
+    {% endfor %}
+
+</ul>
