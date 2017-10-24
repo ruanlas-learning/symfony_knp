@@ -1,11 +1,17 @@
-<h1>The Genus {{ name }}</h1>
+{% extends 'base.html.twig' %}
 
-{#&#123;&#35;{{ dump(name) }}&#35;&#125;#}
-{#&#123;&#35;{{ dump(notes) }}&#35;&#125;#}
-{#{{ dump() }}#}
-<ul>
-    {% for note in notes %}
-        <li>{{ note }}</li>
-    {% endfor %}
+{% block title %}Genus {{ name }}{% endblock %}
 
-</ul>
+{% block body %} {# Está sobreescrevendo o bloco {body} existente no arquivo 'base.html.twig' #}
+    <h1>The Genus {{ name }}</h1>
+
+    {#&#123;&#35;{{ dump(name) }}&#35;&#125;#}
+    {#&#123;&#35;{{ dump(notes) }}&#35;&#125;#}
+    {#{{ dump() }}#}
+
+    <ul>
+        {% for note in notes %}
+            <li>{{ note }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
