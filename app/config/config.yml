@@ -43,6 +43,13 @@ twig:
 
 # Doctrine Configuration
 doctrine:
+#### Parâmetros configurados no parameters.yml
+#parameters:
+#    database_host: 127.0.0.1
+#    database_port: 3306
+#    database_name: symfony_aquanote
+#    database_user: root
+#    database_password: '@@AlphaBravo@'
     dbal:
         driver: pdo_mysql
         host: '%database_host%'
