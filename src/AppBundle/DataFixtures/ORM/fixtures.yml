@@ -8,8 +8,10 @@
 ##            - { name: twig.extension }
 ##            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
 AppBundle\Entity\Genus:
-    genus_{1..10}:
-        name: <name()>
+    genus_{1..20}:
+#        name: <name()>
+        name: <genus()>
         subFamily: <text(20)>
         speciesCount: <numberBetween(100, 100000)>
         funFact: <sentence()>
+        isPublished: <boolean(75)>

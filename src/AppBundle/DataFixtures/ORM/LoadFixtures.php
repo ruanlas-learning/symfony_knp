@@ -24,6 +24,36 @@ class LoadFixtures implements FixtureInterface
 //
 //        $manager->persist($genus);
 //        $manager->flush();
-        $objects = Fixtures::load(__DIR__.'/fixtures.yml', $manager);
+        $objects = Fixtures::load(
+            __DIR__.'/fixtures.yml',
+            $manager,
+            [
+                'providers' => [$this]
+            ]
+        );
+    }
+
+    public function genus()
+    {
+        $genera = [
+            'Octopus',
+            'Balaena',
+            'Orcinus',
+            'Hippocampus',
+            'Asterias',
+            'Amphiprion',
+            'Carcharodon',
+            'Aurelia',
+            'Cucumaria',
+            'Balistoides',
+            'Paralithodes',
+            'Chelonia',
+            'Trichechus',
+            'Eumetopias'
+        ];
+
+        $key = array_rand($genera);
+        
+        return $genera[$key];
     }
 }
