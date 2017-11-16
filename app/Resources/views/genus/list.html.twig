@@ -15,7 +15,12 @@
         {% for genus in genuses %}
             {#{{ dump(genus) }}#}
             <tr>
-                <td>{{ genus.name }}</td>
+                {#<td>{{ genus.name }}</td>#}
+                <td>
+                    <a href="{{ path('genus_show', {'genusName': genus.name}) }}">
+                        {{ genus.name }}
+                    </a>
+                </td>
                 <td>{{ genus.speciesCount }}</td>
                 <td>{{ genus.updatedAt|date('Y-m-d') }}</td>
             </tr>
